@@ -27,9 +27,15 @@
                 },{
                     $type: "input",
                     onkeyup: function(e){ // key code 65 : key A
-                        console.log('key ', e.keyCode);
+                        // console.log('key ', e.keyCode);
 
-                        if(e.keyCode === 65) document.querySelector("#u4bi-div")._setText(this.value);
+                        if(e.keyCode === 65){
+                            document.querySelector("#u4bi-div")._setText(this.value);
+                            
+                            console.log('getElementId ', document.getElementById('u4bi-div'));
+                            console.log('querySelectorAll ',document.querySelectorAll('.good-class'));
+                            // etc : getElementById, querySelector, querySelectorAll
+                        }
                     }
                 }]
             }
