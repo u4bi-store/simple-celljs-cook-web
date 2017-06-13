@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://www.celljs.org/cell.js"></script>
+
+        <style>
+            .good-class{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+        
+            var node = {
+                $cell: true,
+                $components: [{
+                    $type: "div",
+                    id: "u4bi-div",
+                    $text: "U4BI TEXT",
+                    class: "good-class",
+                    _setText: function(text){
+                        this.$text = text;
+                    }
+                },{
+                    $type: "input",
+                    onkeyup: function(e){ // key code 65 : key A
+                        console.log('key ', e.keyCode);
+
+                        if(e.keyCode === 65) document.querySelector("#u4bi-div")._setText(this.value);
+                    }
+                }]
+            }
+
+        </script>
+    </body>
+</html>
