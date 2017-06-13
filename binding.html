@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://www.celljs.org/cell.js"></script>
+    </head>
+    <body>
+
+        <script>
+        
+            var node = {
+                $cell: true,
+                $type: "input",
+                class: "good-class",
+                onchange: function(e){
+                    console.log(this);
+                    
+                    console.log("인풋의 값은 ? ", this.value);
+                    console.log("인풋의 클래스는 ? ", this.class);
+                }
+            }
+
+        </script>
+    </body>
+</html>
