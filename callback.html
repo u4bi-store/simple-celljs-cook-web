@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://www.celljs.org/cell.js"></script>
+    </head>
+    <body>
+
+        <script>
+        
+            var node = {
+                $cell: true,
+                $components: [
+                    
+                    {
+                        id: "A",
+                        $text : 'click here',
+                        onclick: function(e){
+                            console.log('A', e.target);
+                            console.log('B', document.querySelector("#B"));
+
+                            document.querySelector("#B")._funcB(this); // 1
+                            
+                        },
+                        _funcA : function(item){
+                            console.log('funcA() ', item); // 4
+                        }
+                    },
+
+                    //
+
+                    {
+                        id: "B",
+                        _funcB : function(item){   // 2
+                            console.log('funcB() ', item);
+                            item._funcA('A');   // 3
+
+                        }
+                    }
+
+                ]
+            }
+
+
+
+            /* components
+
+                <div id="B" ></div>
+                <div id="A" >click here</div>
+
+            */
+
+        </script>
+    </body>
+</html>
