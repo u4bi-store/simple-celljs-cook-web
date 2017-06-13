@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://www.celljs.org/cell.js"></script>
+        <style>
+            p{
+                border: 1px solid red;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <script>
+        
+            var node = {
+                $cell: true,
+                $type: 'div',
+                _todos: [],
+                $update: function(){
+                    this.querySelector('.todo-list')._updateTodoList();
+
+                },
+                $components: [
+
+                    // 
+
+                    {
+                        $type: 'input',
+                        onkeyup: function(e){
+                            if(e.keyCode === 13 && this.value !== ''){
+                                this._todos.push(this.value);
+                                this.value = '';
+
+                            }
+
+                        }
+                    },
+
+                    //
+                    
+                    {
+                        class: 'todo-list',
+                        _updateTodoList: function(){
+                            console.log('update todo len : ', this._todos.length);
+
+                            this.$components = this._todos.map(function(item, index){
+                                return {
+                                    $type : 'p',
+                                    $text: '<h3>TODO '+(index+1)+'</h3>'+ item
+                                };
+                            })
+                        }
+                    }
+
+                    //
+
+                ]
+            }
+
+        </script>
+    </body>
+</html>
