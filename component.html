@@ -37,7 +37,21 @@
             var node = {
                 $cell: true,
                 $type: "select",
-                $components: Data.map(Option)
+                $components: Data.map(Option),
+                $init: function(){
+                    
+                    console.log('init', this.children);
+                    
+                    console.log('1', this.children[0].value);
+                    console.log('2', this.children[1].value);
+
+                    console.log('3', this.children[0]._value);
+                    console.log('4', this.children[1]._value);
+
+                    console.log('5', this.children[1].text);
+                    console.log('6', this.children[1].$text);
+
+                }
             }
 
 
