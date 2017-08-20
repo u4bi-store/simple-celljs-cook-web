@@ -47,8 +47,8 @@
 
                             this.$components = this._todos.map(function(item, index){
                                 return {
-                                    $type : 'p',
-                                    $text: '<h3>TODO '+(index+1)+'</h3>'+ item
+                                    $type : 'h3',
+                                    $text: 'TODO '+(index+1) + ' : ' + item
                                 };
                             })
                         }
