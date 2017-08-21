@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://www.celljs.org/cell.js"></script>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            .wrapper{
+                display: grid; 
+                /*grid-template-columns: 1fr 1fr; */
+                grid-gap: 10px;                
+            }
+
+            .box{ 
+                border: 1px solid red;
+                border-radius: 5px; 
+                padding: 20px;                
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            
+            var 
+                data = [],
+                count = 50;
+            
+            for(var i = count; i--;) data.push({ $type: "div", class: "box", $text: "TEST" } );
+
+            var node = {
+                $cell: true,
+                $type: "div",
+                id : 'container',
+                class: "wrapper",
+                style : {
+                    border : '1px solid blue',
+                    'grid-template-columns' : '3fr 1fr'
+                },
+                $components: data
+            }
+
+        </script>
+    </body>
+</html>
